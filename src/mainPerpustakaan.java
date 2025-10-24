@@ -51,17 +51,17 @@ class Perpustakaan {
     public void pinjamBuku(String idAnggota, String isbn) {
         Buku buku = cariBuku(isbn);
         if (buku == null) {
-            System.out.println("❌ Buku tidak ditemukan.");
+            System.out.println("Buku tidak ditemukan.");
             return;
         }
         if (buku.statusDipinjam) {
-            System.out.println("⚠️ Buku sedang dipinjam.");
+            System.out.println("Buku sedang dipinjam.");
             return;
         }
 
         buku.statusDipinjam = true;
         daftarPeminjaman.add(idAnggota + " - " + buku.judul);
-        System.out.println("✅ Buku '" + buku.judul + "' berhasil dipinjam oleh anggota " + idAnggota);
+        System.out.println("Buku '" + buku.judul + "' berhasil dipinjam oleh anggota " + idAnggota);
     }
 
     public void tampilkanKoleksiBuku() {
